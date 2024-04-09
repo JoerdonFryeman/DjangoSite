@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+
+<!-- Посты -->
+{% for i in post %}
+
+<!-- Изображение -->
+{% if i.photo %}
+<a href='{{i.get_absolute_url}}'>
+    <img align="left" src="{{i.photo.url}}" height="165" hspace="20" vspace="20" alt="{{i.header}}">
+</a>
+{% else %}
+<a href="{{i.get_absolute_url}}">
+    {% include 'base/inclusions/image_icon.html' %}
+</a>
+{% endif %}
+
+<!-- Заголовок поста -->
+<p>{{i.header}}</p><br>
+{% if i.category.cat_name != None %}
+<p>{{i.category.cat_name}}</p><br>
+{% else %}
+<p>{% trans 'Star' %}</p><br>
+{% endif %}
+
+<!-- Текст поста с фильтрами -->
+{% autoescape off %}
+<p>{{i.post|linebreaks|truncatewords:40}}</p><br>
+{% endautoescape %}
+
+<!-- Ссылка на пост -->
+<p align="right">
+    <a class="link-dark" href="{{i.get_absolute_url}}">{% include 'base/inclusions/eyeglasses_icon.html' %}
+        {% if not forloop.last %}
+        <hr class="line">
+        <br>
+        {% endif %}
+    </a>
+</p>
+{% endfor %}
+{% endblock %}
+
+<!-- Блок навигации -->
+{% block navigation %}
+<div class="navigation">
+    {% if page_obj.has_other_pages %}
+    {% if page_obj.has_previous %}
+    <a class="link-dark" href="?page={{page_obj.previous_page_number}}">
+        {% include 'base/inclusions/caret_left_icon.html' %}&nbsp;
+    </a>
+    {% endif %}
+
+    {% for i in page_obj.paginator.page_range %}
+    {% if page_obj.number == i %}
+    <a>{{i}}</a>
+    {% elif i >= page_obj.number|add:-2 and i <= page_obj.number|add:2 %}
+    <a class="link-dark" href="?page={{i}}">{{i}}</a>
+    {% endif %}
+    {% endfor %}
+
+    {% if page_obj.has_next %}
+    <a class="link-dark" href="?page={{page_obj.next_page_number}}">
+        &nbsp;{% include 'base/inclusions/caret_right_icon.html' %}
+    </a>
+    {% endif %}
+    {% endif %}
+</div>
+{% endblock %}

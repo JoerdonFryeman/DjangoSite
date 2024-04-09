@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+<h2>{% trans 'Your message has been successfully sent!' %}</h2><br>
+<p><a class="link-dark" href="{% url 'home' %}">{% trans 'Back to home page' %}</a></p>
+{% endblock %}

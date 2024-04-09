@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <a class="link-dark" href='https://github.com/Kepler54/Website' target="_blank">
+        {% include 'base/inclusions/GitHub_icon.html' %}
+    </a>
+</div>
+<div>
+    <a class="link-dark" href='https://github.com/Kepler54/Website' target="_blank">
+        <br>
+        <p>{{page_post|linebreaks}}</p>
+    </a>
+</div>
+{% endblock %}

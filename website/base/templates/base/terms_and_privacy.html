@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% autoescape off %}
+<p>{{page_post|linebreaks}}</p>
+{% endautoescape %}
+{% endblock %}

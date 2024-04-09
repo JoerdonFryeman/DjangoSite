@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+{% if content.photo %}
+<img src="{{content.photo.url}}" alt="{{header}}"><br>
+{% else %}
+<p align="center">{% include 'base/inclusions/image_icon.html' %}</p><br>
+{% endif %}
+<br>{{content.post|linebreaks}}<br>
+{% trans 'Author: ' %}{{content.author|default:"Unknown"}} | {% trans 'Date: ' %}{{content.time_update|date:"d-m-Y H:i:s"}}
+<br>
+{% endblock %}

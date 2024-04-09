@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+{% load static %}
+{% load base_tags %}
+{% load i18n %}
+
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="{% static 'base/css/styles.css' %}">
+    <link rel="icon" href="{% static 'base/images/main_icon.png' %}">
+    <title>{{title}}</title>
+</head>
+<body>
+<div id="page">
+    <div class="head">
+        <div class="menu">
+            <a class="link-white" href="{% url 'home' %}">{% trans 'Home' %}</a>&nbsp;
+            <a class="link-white" href="{% url 'about' %}">{% trans 'About' %}</a>&nbsp;
+            <a class="link-white" href="{% url 'contact' %}">{% trans 'Contact' %}</a>&nbsp;
+        </div>
+    </div>
+    <div class="body">
+        <div class="categories">
+            <div class="shell">
+                <ul><h2>{{page_header}}</h2></ul>
+                <hr class="line">
+                {% get_category selected %}
+            </div>
+        </div>
+        <div class="content">
+            <div class="shell">
+                {% block content %}{% endblock %}
+                {% block navigation %}{% endblock %}
+            </div>
+        </div>
+    </div>
+    <div class="footer" style="color: #ffffff">
+        <p style="display:inline-block">
+            <a class="link-white" href="{% url 'terms' %}">{% trans 'Terms of Use' %}</a> |
+            <a class="link-white" href="{% url 'privacy' %}">{% trans 'Privacy & Security' %}</a> |
+            &copy 2024 {% trans 'Space' %}&nbsp;
+        </p>
+        <form style="display:inline-block" class="language" action="{% url 'set_language' %}" method="post">
+            {% csrf_token %}
+            <input name="next" type="hidden" value="{{redirect_to}}">
+            <select name="language">
+                {% get_current_language as LANGUAGE_CODE %}
+                {% get_available_languages as LANGUAGES %}
+                {% get_language_info_list for LANGUAGES as languages %}
+                {% for language in languages %}
+                <option value="{{language.code}}" {% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                    {{language.name_local}} ({{language.code}})
+                </option>
+                {% endfor %}
+            </select>&nbsp;
+            <input type="submit" value="{% trans 'select' %}">
+        </form>
+    </div>
+</div>
+</body>
+</html>
