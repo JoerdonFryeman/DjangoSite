@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>{% trans 'Do you really want to delete this article?' %}</p><br>
+    <button type="submit">{% trans 'Delete' %}</button>
+</form>
+{% endblock %}

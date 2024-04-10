@@ -17,8 +17,8 @@ class Content(models.Model):
         upload_to="photos/%Y/%m/%d/", default=None, blank=True, null=True, verbose_name=_('Photo')
     )
     author = models.ForeignKey(
-        get_user_model(), on_delete=models.SET_NULL, related_name='content', null=True, default=None,
-        verbose_name=_('Author')
+        get_user_model(), on_delete=models.SET_NULL, related_name='content',
+        null=True, default=None, verbose_name=_('Author')
     )
     category = models.ForeignKey(
         'Category', on_delete=models.PROTECT, related_name='content', null=True, verbose_name=_('Categories')
@@ -29,6 +29,9 @@ class Content(models.Model):
 
     objects = models.Manager()
     published = PublishManager()
+
+    def __str__(self):
+        return self.header
 
     class Meta:
         verbose_name = _('object')

@@ -17,6 +17,22 @@
             <a class="link-white" href="{% url 'home' %}">{% trans 'Home' %}</a>&nbsp;
             <a class="link-white" href="{% url 'about' %}">{% trans 'About' %}</a>&nbsp;
             <a class="link-white" href="{% url 'contact' %}">{% trans 'Contact' %}</a>&nbsp;
+            {% if perms.users.add_users %}
+            <a href="{% url 'users:add_post' %}">{% trans 'Add article' %}</a>&nbsp;
+            {% endif %}
+            {% if user.is_authenticated %}
+            <a href="{% url 'users:profile' %}">{{user.username}}</a>&nbsp;
+            <form style="display:inline-block" method="post" action="{% url 'users:logout' %}">{% csrf_token %}
+                <button type="submit" class="button-head">{% trans 'Logout' %}</button>
+            </form>
+            {% else %}
+            <a href="{% url 'users:login' %}">
+                <button type="button" class="button-head">{% trans 'Login' %}</button>&nbsp;
+            </a>
+            <a href="{% url 'users:registration' %}">
+                <button type="button" class="button-head">{% trans 'Registration' %}</button>
+            </a>
+            {% endif %}
         </div>
     </div>
     <div class="body">
