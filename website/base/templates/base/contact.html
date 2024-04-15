@@ -6,14 +6,14 @@
     {% csrf_token %}
     <div class="error-form">{{form.non_field_errors}}</div>
     {% for f in form %}
-    <p><label class="label-form" for="{{f.id_for_label}}">{{f.label}}:</label>{{f}}</p>
+    <label class="label-form" for="{{f.id_for_label}}">{{f.label}}:</label>{{f}}
     <div class="error-form">{{f.errors}}</div>
     {% endfor %}
     <input class="button" type="submit" value="{% trans 'Send' %}">
 </form>
-<br><h2>{% trans 'Links' %}</h2><br>
+<br><h2>{% trans 'Links' %}</h2>
 <a class="link-dark" href='https://github.com/Kepler54/DjangoSite' target="_blank">
     {% include 'base/inclusions/eyeglasses_icon.html' %}&nbsp;
-</a><br>
+</a>
 <br><p>{{page_post|linebreaks}}</p>
 {% endblock %}

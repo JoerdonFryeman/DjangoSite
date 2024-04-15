@@ -31,12 +31,6 @@ class UserRegisterForm(UserCreationForm):
         model = get_user_model()
         fields = ['username', 'email', 'password1', 'password2']
 
-    def clean_password2(self):
-        cd = self.cleaned_data
-        if cd['password1'] != cd['password2']:
-            raise forms.ValidationError(_('The passwords don\'t match!'))
-        return cd['password1']
-
     def clean_email(self):
         email = self.cleaned_data['email']
         if get_user_model().objects.filter(email=email).exists():

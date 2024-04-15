@@ -10,4 +10,10 @@
 <br>{{content.post|linebreaks}}<br>
 {% trans 'Author: ' %}{{content.author|default:"Unknown"}} | {% trans 'Date: ' %}{{content.time_update|date:"d-m-Y H:i:s"}}
 <br>
+{% if perms.users.change_users %}
+<br><p align="center"><a class="link-dark" href="{% url 'users:edit' content.slug %}">{% trans 'Edit article' %}</a></p>
+{% endif %}
+{% if perms.users.delete_users %}
+<p align="center"><a class="link-dark" href="{% url 'users:delete' content.slug %}">{% trans 'Delete article' %}</a></p><br>
+{% endif %}
 {% endblock %}

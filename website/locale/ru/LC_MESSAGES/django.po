@@ -1,0 +1,364 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-10 11:24+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+#: base/admin.py:18
+msgid "Publish selected entries"
+msgstr "Опубликовать выбранные записи"
+
+#: base/admin.py:23
+msgid "Unpublish selected records"
+msgstr "Снять с публикации выбранные записи"
+
+#: base/apps.py:6
+msgid "Site Objects"
+msgstr "Объекты сайта"
+
+#: base/forms.py:7 users/models.py:12
+msgid "Name"
+msgstr "Имя"
+
+#: base/forms.py:8
+msgid "Email"
+msgstr "Почта"
+
+#: base/forms.py:9
+msgid "Message"
+msgstr "Сообщение"
+
+#: base/forms.py:10
+msgid "Captcha"
+msgstr "Тест"
+
+#: base/models.py:13
+msgid "Header"
+msgstr "Заголовок"
+
+#: base/models.py:14
+msgid "Content"
+msgstr "Содержание"
+
+#: base/models.py:15
+msgid "Slug"
+msgstr "Слаг"
+
+#: base/models.py:17 users/models.py:11
+msgid "Photo"
+msgstr "Фото"
+
+#: base/models.py:21
+msgid "Author"
+msgstr "Автор"
+
+#: base/models.py:24 base/models.py:52
+msgid "Categories"
+msgstr "Категории"
+
+#: base/models.py:26
+msgid "Creation time"
+msgstr "Время создания"
+
+#: base/models.py:27
+msgid "Time of change"
+msgstr "Время изменения"
+
+#: base/models.py:28
+msgid "Status"
+msgstr "Статус"
+
+#: base/models.py:37
+msgid "object"
+msgstr "оъект"
+
+#: base/models.py:38
+msgid "Objects"
+msgstr "Объекты"
+
+#: base/models.py:45
+msgid "Category"
+msgstr "Категория"
+
+#: base/models.py:51
+msgid "category"
+msgstr "категория"
+
+#: base/templates/base/contact.html:12 users/templates/users/add_post.html:13
+msgid "Send"
+msgstr "Отправить"
+
+#: base/templates/base/contact.html:14
+msgid "Links"
+msgstr "Ссылки"
+
+#: base/templates/base/content.html:11
+msgid "Author: "
+msgstr "Автор: "
+
+#: base/templates/base/content.html:11
+msgid "Date: "
+msgstr "Дата: "
+
+#: base/templates/base/email_was_sent.html:5 base/views.py:102
+msgid "Your message has been successfully sent!"
+msgstr "Ваше сообщение успешно отправлено!"
+
+#: base/templates/base/email_was_sent.html:6
+#: base/templates/base/error_404.html:6
+msgid "Back to home page"
+msgstr "Вернуться на главную страницу"
+
+#: base/templates/base/error_404.html:5
+msgid "Page not found! Error 404..."
+msgstr "Страница не найдена! Ошибка 404..."
+
+#: base/templates/base/index.html:25
+msgid "Star"
+msgstr "Звезда"
+
+#: base/views.py:14 templates/base.html:57
+msgid "Space"
+msgstr "Космос"
+
+#: base/views.py:55 templates/base.html:18
+msgid "About"
+msgstr "О сайте"
+
+#: base/views.py:56
+msgid "Site information"
+msgstr "Информация о сайте"
+
+#: base/views.py:57
+msgid "Website source code"
+msgstr "Исходный код сайта"
+
+#: base/views.py:65 templates/base.html:19
+msgid "Contact"
+msgstr "Контакты"
+
+#: base/views.py:66
+msgid "Contact us"
+msgstr "Свяжитесь с нами"
+
+#: base/views.py:67
+msgid "Support with Bitcoin: bc1qewfgtrrg2gqgtvzl5d2pr9pte685pp5n3g6scy"
+msgstr "Поддержка с помощью биткойна: bc1qewfgtrrg2gqgtvzl5d2pr9pte685pp5n3g6scy"
+
+#: base/views.py:82
+msgid "Terms"
+msgstr "Условия"
+
+#: base/views.py:83 templates/base.html:55
+msgid "Terms of Use"
+msgstr "Пользовательское соглашение"
+
+#: base/views.py:84
+msgid "Your Terms of Use"
+msgstr "Ваше пользовательское соглашение"
+
+#: base/views.py:91
+msgid "Privacy"
+msgstr "Конфиденциальность"
+
+#: base/views.py:92 templates/base.html:56
+msgid "Privacy & Security"
+msgstr " Политика конфиденциальности"
+
+#: base/views.py:93
+msgid "Your privacy policy"
+msgstr "Ваша политика конфиденциальности"
+
+#: base/views.py:100 base/views.py:101
+msgid "Successfully sent!"
+msgstr "Успешно отправлено!"
+
+#: templates/base.html:17
+msgid "Home"
+msgstr "Главная страница"
+
+#: templates/base.html:21
+msgid "Add article"
+msgstr "Добавить статью"
+
+#: templates/base.html:26
+msgid "Logout"
+msgstr "Выход"
+
+#: templates/base.html:30 users/templates/users/login.html:14
+#: users/templates/users/password_reset_complete.html:5 users/views.py:16
+msgid "Login"
+msgstr "Вход"
+
+#: templates/base.html:33 users/templates/users/registration.html:13
+#: users/views.py:22
+msgid "Registration"
+msgstr "Регистрация"
+
+#: templates/base.html:72
+msgid "select"
+msgstr "выбрать"
+
+#: users/forms.py:16 users/forms.py:25
+msgid "Login: "
+msgstr "Логин: "
+
+#: users/forms.py:17 users/forms.py:27
+msgid "Password: "
+msgstr "Пароль: "
+
+#: users/forms.py:26
+msgid "E-mail: "
+msgstr "Почта: "
+
+#: users/forms.py:28
+msgid "Password retry: "
+msgstr "Повтор пароля: "
+
+#: users/forms.py:37
+msgid "The passwords don't match!"
+msgstr "Пароли не совпадают!"
+
+#: users/forms.py:43
+msgid "This E-mail already exists!"
+msgstr "Эта почта уже существует!"
+
+#: users/forms.py:48
+msgid "Change login: "
+msgstr "Измените логин: "
+
+#: users/forms.py:49
+msgid "Change E-mail: "
+msgstr "Изменить почту: "
+
+#: users/forms.py:59
+msgid "Current password"
+msgstr "Текущий пароль"
+
+#: users/forms.py:60
+msgid "New password"
+msgstr "Новый пароль"
+
+#: users/forms.py:61
+msgid "Confirm password"
+msgstr "Подтвердите пароль"
+
+#: users/models.py:13
+msgid "Surname"
+msgstr "Фамилия"
+
+#: users/models.py:14
+msgid "Date of birth"
+msgstr "Дата рождения"
+
+#: users/templates/users/delete.html:7
+msgid "Do you really want to delete this article?"
+msgstr "Вы действительно хотите удалить эту статью?"
+
+#: users/templates/users/delete.html:8
+msgid "Delete"
+msgstr "Удалить"
+
+#: users/templates/users/login.html:15
+msgid "Forgot your password?"
+msgstr "Забыли пароль?"
+
+#: users/templates/users/password_change_done.html:5
+msgid "Back to profile"
+msgstr "Назад к профилю"
+
+#: users/templates/users/password_change_form.html:13
+msgid "Change password"
+msgstr "Изменить пароль"
+
+#: users/templates/users/password_reset_confirm.html:13
+#: users/templates/users/profile.html:20
+msgid "Save"
+msgstr "Сохранить"
+
+#: users/templates/users/password_reset_form.html:12
+msgid "Reset password"
+msgstr "Сброс пароля"
+
+#: users/templates/users/profile.html:23
+msgid "Change password: "
+msgstr "Изменить пароль"
+
+#: users/views.py:16
+msgid "Authorization"
+msgstr "Авторизация"
+
+#: users/views.py:30
+msgid "Profile"
+msgstr "Профиль"
+
+#: users/views.py:30
+msgid "User profile"
+msgstr "Профиль пользователя"
+
+#: users/views.py:43 users/views.py:48
+msgid "Password change"
+msgstr "Смена пароля"
+
+#: users/views.py:48
+msgid "Password change successfully done"
+msgstr "Смена пароля успешно выполнена"
+
+#: users/views.py:55 users/views.py:60 users/views.py:66 users/views.py:71
+msgid "Password reset"
+msgstr "Сброс пароля"
+
+#: users/views.py:60
+msgid "Password reset done"
+msgstr "Сброс пароля выполнен"
+
+#: users/views.py:66
+msgid "Password reset confirm"
+msgstr "Подтверждение сброса пароля"
+
+#: users/views.py:71
+msgid "Password reset complete"
+msgstr "Сброс пароля выполнен"
+
+#: users/views.py:77
+msgid "Add an article"
+msgstr "Добавить статью"
+
+#: users/views.py:86
+msgid "Edit article"
+msgstr "Редактировать статью"
+
+#: users/views.py:94
+msgid "Delete article"
+msgstr "Удалить статью"
+
+#: website/settings/base.py:74
+msgid "Russia"
+msgstr "Русский"
+
+#: website/settings/base.py:75
+msgid "English"
+msgstr "Английский"
+
+#: website/urls.py:23
+msgid "Admin panel"
+msgstr "Панель администратора"
+
+#: website/urls.py:24
+msgid "Space website"
+msgstr "Космический сайт"

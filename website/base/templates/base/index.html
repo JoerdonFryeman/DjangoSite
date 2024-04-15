@@ -9,7 +9,7 @@
 <!-- Изображение -->
 {% if i.photo %}
 <a href='{{i.get_absolute_url}}'>
-    <img align="left" src="{{i.photo.url}}" height="165" hspace="20" vspace="20" alt="{{i.header}}">
+    <img align="left" src="{{i.photo.url}}" height="165" hspace="15" alt="{{i.header}}">
 </a>
 {% else %}
 <a href="{{i.get_absolute_url}}">
@@ -18,27 +18,26 @@
 {% endif %}
 
 <!-- Заголовок поста -->
-<p>{{i.header}}</p><br>
+{{i.header}}
 {% if i.category.cat_name != None %}
-<p>{{i.category.cat_name}}</p><br>
+<p>{{i.category.cat_name}}</p>
 {% else %}
-<p>{% trans 'Star' %}</p><br>
+<p>{% trans 'Star' %}</p>
 {% endif %}
 
 <!-- Текст поста с фильтрами -->
 {% autoescape off %}
-<p>{{i.post|linebreaks|truncatewords:40}}</p><br>
+{{i.post|linebreaks|truncatewords:30}}
 {% endautoescape %}
 
 <!-- Ссылка на пост -->
 <p align="right">
-    <a class="link-dark" href="{{i.get_absolute_url}}">{% include 'base/inclusions/eyeglasses_icon.html' %}
-        {% if not forloop.last %}
-        <hr class="line">
-        <br>
-        {% endif %}
-    </a>
-</p>
+    <a class="link-dark" href="{{i.get_absolute_url}}">{% include 'base/inclusions/eyeglasses_icon.html' %}</a>
+</p><br>
+{% if not forloop.last %}
+<hr class="line"><br>
+{% endif %}
+
 {% endfor %}
 {% endblock %}
 
@@ -66,5 +65,5 @@
     </a>
     {% endif %}
     {% endif %}
-</div>
+</div><br>
 {% endblock %}

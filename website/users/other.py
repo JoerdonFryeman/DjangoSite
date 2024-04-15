@@ -61,3 +61,11 @@
 #     path('registration/', views.user_registration, name='registration'),
 #     path('add_post/', views.add_post, name='add_post'),
 # ]
+
+
+# class UserRegisterForm(UserCreationForm):
+#     def clean_password2(self):
+#         cd = self.cleaned_data
+#         if cd['password1'] != cd['password2']:
+#             raise forms.ValidationError(_('The passwords don\'t match!'))
+#         return cd['password1']
