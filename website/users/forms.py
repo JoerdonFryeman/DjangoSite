@@ -42,14 +42,21 @@ class UserProfileForm(forms.ModelForm):
     username = forms.CharField(label=_('Change login: '), widget=forms.TextInput())
     email = forms.CharField(label=_('Change E-mail: '), widget=forms.EmailInput())
     this_year = datetime.date.today().year
-    date_birth = forms.DateField(widget=forms.SelectDateWidget(years=tuple(range(this_year - 150, this_year - 5))))
+    date_birth = forms.DateField(
+        label=_('Date of birth: '), widget=forms.SelectDateWidget(years=tuple(range(this_year - 150, this_year - 5)))
+    )
 
     class Meta:
         model = get_user_model()
         fields = ['photo', 'username', 'email', 'date_birth', 'first_name', 'last_name']
 
+        widgets = {
+            'first_name': forms.TextInput(attrs={'class': 'form-input'}),
+            'last_name': forms.TextInput(attrs={'class': 'form-input'})
+        }
+
 
 class UserPasswordChangeForm(PasswordChangeForm):
     old_password = forms.CharField(label=_('Current password'), widget=forms.PasswordInput())
     new_password1 = forms.CharField(label=_('New password'), widget=forms.PasswordInput())
-    new_password2 = forms.CharField(label=_('Confirm password'), widget=forms.PasswordInput())
+    new_password2 = forms.CharField(label=_('Confirm'), widget=forms.PasswordInput())

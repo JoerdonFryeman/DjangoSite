@@ -2,7 +2,7 @@
 {% load i18n %}
 
 {% block content %}
-<form action="" method="POST" enctype="multipart/form-data" class="form-label">
+<form method="POST" enctype="multipart/form-data" class="form-label">
     {% csrf_token %}
     <div class="error-form">{{form.non_field_errors}}</div>
     {% for i in form %}

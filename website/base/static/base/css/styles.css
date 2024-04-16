@@ -59,7 +59,7 @@ padding: 10px 50px 10px 50px;
 background: rgba(204, 204, 204, 0.5);
 }
 .navigation {
-margin: 35px 0px 0px 0px;
+margin: 10px 0px 0px 0px;
 text-align: center;
 }
 .footer {
@@ -80,6 +80,10 @@ vertical-align: top;
 list-style: none;
 padding: 0;
 color: #000000;
+}
+.centre-text {
+padding-top: 300px;
+text-align: center;
 }
 .link-white {
 color: #ffffff;

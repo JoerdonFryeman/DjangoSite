@@ -12,7 +12,7 @@
     <img align="left" src="{{i.photo.url}}" height="165" hspace="15" alt="{{i.header}}">
 </a>
 {% else %}
-<a href="{{i.get_absolute_url}}">
+<a class="link-dark" href="{{i.get_absolute_url}}">
     {% include 'base/inclusions/image_icon.html' %}
 </a>
 {% endif %}
