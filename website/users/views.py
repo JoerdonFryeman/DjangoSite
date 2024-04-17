@@ -38,13 +38,13 @@ class UserProfile(LoginRequiredMixin, UpdateView):
 
 class UserPasswordChange(PasswordChangeView):
     form_class = UserPasswordChangeForm
-    success_url = reverse_lazy("users:password_change_done")
+    success_url = reverse_lazy("users:back_to_profile")
     template_name = "users/password_change_form.html"
     extra_context = {'title': _('Password change'), 'page_header': _('Password change')}
 
 
 class UserPasswordChangeDone(PasswordChangeDoneView):
-    template_name = 'users/password_change_done.html'
+    template_name = 'users/back_to_profile.html'
     extra_context = {'title': _('Password change'), 'page_header': _('Password change successfully done')}
 
 

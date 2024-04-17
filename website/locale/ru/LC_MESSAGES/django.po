@@ -201,7 +201,7 @@ msgid "Logout"
 msgstr "Выход"
 
 #: templates/base.html:30 users/templates/users/login.html:14
-#: users/templates/users/password_reset_complete.html:5 users/views.py:16
+#: users/templates/users/back_to_profile.html:5 users/views.py:16
 msgid "Login"
 msgstr "Вход"
 
@@ -255,8 +255,8 @@ msgid "New password"
 msgstr "Новый пароль"
 
 #: users/forms.py:61
-msgid "Confirm password"
-msgstr "Подтвердите пароль"
+msgid "Confirm"
+msgstr "Подтверждение"
 
 #: users/models.py:13
 msgid "Surname"
@@ -278,7 +278,7 @@ msgstr "Удалить"
 msgid "Forgot your password?"
 msgstr "Забыли пароль?"
 
-#: users/templates/users/password_change_done.html:5
+#: users/templates/users/back_to_profile.html:5
 msgid "Back to profile"
 msgstr "Назад к профилю"
 
@@ -328,8 +328,8 @@ msgid "Password reset done"
 msgstr "Сброс пароля выполнен"
 
 #: users/views.py:66
-msgid "Password reset confirm"
-msgstr "Подтверждение сброса пароля"
+msgid "Confirm"
+msgstr "Подтверждение"
 
 #: users/views.py:71
 msgid "Password reset complete"
