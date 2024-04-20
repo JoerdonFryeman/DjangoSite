@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-10 11:24+0000\n"
+"POT-Creation-Date: 2024-04-20 14:51+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -115,6 +115,14 @@ msgstr "Автор: "
 msgid "Date: "
 msgstr "Дата: "
 
+#: base/templates/base/content.html:14 users/views.py:86
+msgid "Edit article"
+msgstr "Редактировать статью"
+
+#: base/templates/base/content.html:17 users/views.py:94
+msgid "Delete article"
+msgstr "Удалить статью"
+
 #: base/templates/base/email_was_sent.html:5 base/views.py:102
 msgid "Your message has been successfully sent!"
 msgstr "Ваше сообщение успешно отправлено!"
@@ -132,7 +140,7 @@ msgstr "Страница не найдена! Ошибка 404..."
 msgid "Star"
 msgstr "Звезда"
 
-#: base/views.py:14 templates/base.html:57
+#: base/views.py:14 templates/base.html:55
 msgid "Space"
 msgstr "Космос"
 
@@ -164,7 +172,7 @@ msgstr "Поддержка с помощью биткойна: bc1qewfgtrrg2gqgt
 msgid "Terms"
 msgstr "Условия"
 
-#: base/views.py:83 templates/base.html:55
+#: base/views.py:83 templates/base.html:53
 msgid "Terms of Use"
 msgstr "Пользовательское соглашение"
 
@@ -176,9 +184,9 @@ msgstr "Ваше пользовательское соглашение"
 msgid "Privacy"
 msgstr "Конфиденциальность"
 
-#: base/views.py:92 templates/base.html:56
+#: base/views.py:92 templates/base.html:54
 msgid "Privacy & Security"
-msgstr " Политика конфиденциальности"
+msgstr "Политика конфиденциальности"
 
 #: base/views.py:93
 msgid "Your privacy policy"
@@ -196,21 +204,20 @@ msgstr "Главная страница"
 msgid "Add article"
 msgstr "Добавить статью"
 
-#: templates/base.html:26
+#: templates/base.html:24
 msgid "Logout"
 msgstr "Выход"
 
-#: templates/base.html:30 users/templates/users/login.html:14
-#: users/templates/users/back_to_profile.html:5 users/views.py:16
+#: templates/base.html:28 users/templates/users/login.html:14 users/views.py:16
 msgid "Login"
 msgstr "Вход"
 
-#: templates/base.html:33 users/templates/users/registration.html:13
+#: templates/base.html:31 users/templates/users/registration.html:13
 #: users/views.py:22
 msgid "Registration"
 msgstr "Регистрация"
 
-#: templates/base.html:72
+#: templates/base.html:70
 msgid "select"
 msgstr "выбрать"
 
@@ -231,30 +238,30 @@ msgid "Password retry: "
 msgstr "Повтор пароля: "
 
 #: users/forms.py:37
-msgid "The passwords don't match!"
-msgstr "Пароли не совпадают!"
-
-#: users/forms.py:43
 msgid "This E-mail already exists!"
 msgstr "Эта почта уже существует!"
 
-#: users/forms.py:48
+#: users/forms.py:42
 msgid "Change login: "
 msgstr "Измените логин: "
 
-#: users/forms.py:49
+#: users/forms.py:43
 msgid "Change E-mail: "
 msgstr "Изменить почту: "
 
-#: users/forms.py:59
+#: users/forms.py:46
+msgid "Date of birth: "
+msgstr "Дата рождения: "
+
+#: users/forms.py:60
 msgid "Current password"
 msgstr "Текущий пароль"
 
-#: users/forms.py:60
+#: users/forms.py:61
 msgid "New password"
 msgstr "Новый пароль"
 
-#: users/forms.py:61
+#: users/forms.py:62
 msgid "Confirm"
 msgstr "Подтверждение"
 
@@ -266,6 +273,11 @@ msgstr "Фамилия"
 msgid "Date of birth"
 msgstr "Дата рождения"
 
+#: users/templates/users/back_to_profile.html:5
+#: users/templates/users/password_reset_complete.html:5
+msgid "Back to profile"
+msgstr "Назад к профилю"
+
 #: users/templates/users/delete.html:7
 msgid "Do you really want to delete this article?"
 msgstr "Вы действительно хотите удалить эту статью?"
@@ -274,28 +286,44 @@ msgstr "Вы действительно хотите удалить эту ст�
 msgid "Delete"
 msgstr "Удалить"
 
-#: users/templates/users/login.html:15
+#: users/templates/users/login.html:16
 msgid "Forgot your password?"
 msgstr "Забыли пароль?"
-
-#: users/templates/users/back_to_profile.html:5
-msgid "Back to profile"
-msgstr "Назад к профилю"
 
 #: users/templates/users/password_change_form.html:13
 msgid "Change password"
 msgstr "Изменить пароль"
 
 #: users/templates/users/password_reset_confirm.html:13
-#: users/templates/users/profile.html:20
+#: users/templates/users/profile.html:21
 msgid "Save"
 msgstr "Сохранить"
 
-#: users/templates/users/password_reset_form.html:12
+#: users/templates/users/password_reset_done.html:5
+msgid "We’ve emailed you instructions for setting your password, if an account exists with the email you entered. You should receive them shortly."
+msgstr "Мы отправили вам инструкции по установке пароля, если учетная запись с указанным вами электронным адресом существует. Вы должны получить их в ближайшее время."
+
+#: users/templates/users/password_reset_done.html:7
+msgid "If you don’t receive an email, please make sure you’ve entered the address you registered with, and check your spam folder."
+msgstr "Если вы не получили письмо, убедитесь, что вы ввели адрес, с которого зарегистрировались, и проверьте папку со спамом."
+
+#: users/templates/users/password_reset_email.html:4
+msgid "Please go to the following page and choose a new password:"
+msgstr "Пожалуйста, перейдите на следующую страницу и выберите новый пароль:"
+
+#: users/templates/users/password_reset_email.html:8
+msgid "Your username, in case you’ve forgotten:"
+msgstr "Ваше имя пользователя, если вы забыли:"
+
+#: users/templates/users/password_reset_email.html:10
+msgid "Thanks for using our site!"
+msgstr "Спасибо, что пользуетесь нашим сайтом!"
+
+#: users/templates/users/password_reset_form.html:13
 msgid "Reset password"
 msgstr "Сброс пароля"
 
-#: users/templates/users/profile.html:23
+#: users/templates/users/profile.html:24
 msgid "Change password: "
 msgstr "Изменить пароль"
 
@@ -328,8 +356,8 @@ msgid "Password reset done"
 msgstr "Сброс пароля выполнен"
 
 #: users/views.py:66
-msgid "Confirm"
-msgstr "Подтверждение"
+msgid "Password reset confirm"
+msgstr "Подтвердите сброс пароля"
 
 #: users/views.py:71
 msgid "Password reset complete"
@@ -338,14 +366,6 @@ msgstr "Сброс пароля выполнен"
 #: users/views.py:77
 msgid "Add an article"
 msgstr "Добавить статью"
-
-#: users/views.py:86
-msgid "Edit article"
-msgstr "Редактировать статью"
-
-#: users/views.py:94
-msgid "Delete article"
-msgstr "Удалить статью"
 
 #: website/settings/base.py:74
 msgid "Russia"
