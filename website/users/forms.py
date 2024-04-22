@@ -1,15 +1,8 @@
 import datetime
 from django import forms
 from django.contrib.auth import get_user_model
-from users.context_processors import get_content_model
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm, PasswordChangeForm
-
-
-class AddPostForm(forms.ModelForm):
-    class Meta:
-        model = get_content_model()
-        fields = ['header_ru', 'header_en', 'post_ru', 'post_en', 'category', 'author', 'photo', 'slug', 'is_published']
 
 
 class UserLoginForm(AuthenticationForm):

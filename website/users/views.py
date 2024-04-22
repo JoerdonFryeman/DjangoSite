@@ -3,9 +3,8 @@ from django.contrib.auth import get_user_model
 from django.utils.translation import gettext_lazy as _
 from django.views.generic import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
-
 from users.context_processors import get_content_model
-from users.forms import UserLoginForm, UserRegisterForm, UserProfileForm, UserPasswordChangeForm, AddPostForm
+from users.forms import UserLoginForm, UserRegisterForm, UserProfileForm, UserPasswordChangeForm
 from django.contrib.auth.views import LoginView, PasswordChangeView, PasswordChangeDoneView, PasswordResetView, \
     PasswordResetDoneView, PasswordResetConfirmView, PasswordResetCompleteView
 
@@ -71,9 +70,11 @@ class UserPasswordResetComplete(PasswordResetCompleteView):
     extra_context = {'title': _('Password reset'), 'page_header': _('Password reset complete')}
 
 
-class AddPost(LoginRequiredMixin, CreateView):
-    form_class = AddPostForm
+class AddPost(PermissionRequiredMixin, LoginRequiredMixin, CreateView):
+    model = get_content_model()
+    fields = ['header_ru', 'header_en', 'post_ru', 'post_en', 'category', 'author', 'photo', 'slug', 'is_published']
     template_name = 'users/add_post.html'
+    permission_required = 'users.add_users'
     extra_context = {'title': _('Add an article'), 'page_header': _('Add an article')}
 
 
@@ -82,7 +83,6 @@ class UpdatePost(PermissionRequiredMixin, LoginRequiredMixin, UpdateView):
     fields = ['header_ru', 'header_en', 'post_ru', 'post_en', 'category', 'author', 'photo', 'slug']
     template_name = 'users/add_post.html'
     permission_required = 'users.change_users'
-    success_url = reverse_lazy('home')
     extra_context = {'title': _('Edit article'), 'page_header': _('Edit article')}
 
 

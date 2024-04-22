@@ -43,6 +43,11 @@ class ContentPage(DetailView):
         context = super().get_context_data(**kwargs)
         context['title'] = context['content'].header
         context['page_header'] = context['content'].header
+        context['photo'] = context['content'].photo
+        context['post'] = context['content'].post
+        context['author'] = context['content'].author
+        context['time_update'] = context['content'].time_update
+        context['slug'] = context['content'].slug
         return context
 
     def get_object(self, queryset=None):

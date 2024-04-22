@@ -18,7 +18,9 @@
             <a class="link-white" href="{% url 'about' %}">{% trans 'About' %}</a>&nbsp;
             <a class="link-white" href="{% url 'contact' %}">{% trans 'Contact' %}</a>&nbsp;
             {% if user.is_authenticated %}
+            {% if perms.users.change_users %}
             <a class="link-white" href="{% url 'users:add_post' %}">{% trans 'Add article' %}</a>&nbsp;
+            {% endif %}
             <a class="link-white" href="{% url 'users:profile' %}">{{user.username}}</a>&nbsp;
             <form style="display:inline-block" method="post" action="{% url 'users:logout' %}">{% csrf_token %}
                 <button type="submit" class="button-head">{% trans 'Logout' %}</button>
@@ -36,7 +38,8 @@
     <div class="body">
         <div class="categories">
             <div class="shell">
-                <br><h2>{{page_header}}</h2>
+                <br>
+                <h2>{{page_header}}</h2>
                 <hr class="line">
                 {% get_category selected %}
             </div>

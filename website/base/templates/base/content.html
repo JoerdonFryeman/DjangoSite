@@ -3,18 +3,18 @@
 
 {% block content %}
 {% if content.photo %}
-<img src="{{content.photo.url}}" alt="{{header}}"><br>
+<img src="{{photo.url}}" alt="{{header}}"><br>
 {% else %}
 <p align="center">{% include 'base/inclusions/image_icon.html' %}</p><br>
 {% endif %}
-<br>{{content.post|linebreaks}}<br>
-{% trans 'Author: ' %}{{content.author|default:"Unknown"}} | {% trans 'Date: ' %}{{content.time_update|date:"d-m-Y H:i:s"}}
-<br>
+<br>{{post|linebreaks}}<br>
+{% trans 'Author: ' %}{{author|default:"Unknown"}} | {% trans 'Date: ' %}{{time_update|date:"d-m-Y H:i:s"}}
+<br><br>
 {% if perms.users.change_users %}
-<br><a class="link-dark" href="{% url 'users:edit' content.slug %}">{% trans 'Edit article' %}</a><br>
+<a class="link-dark" href="{% url 'users:edit' slug %}">{% trans 'Edit article' %}</a><br>
 {% endif %}
 {% if perms.users.delete_users %}
-<br><a class="link-dark" href="{% url 'users:delete' content.slug %}">{% trans 'Delete article' %}</a><br>
+<br><a class="link-dark" href="{% url 'users:delete' slug %}">{% trans 'Delete article' %}</a><br>
 <br>
 {% endif %}
 {% endblock %}
