@@ -1,3 +1,5 @@
+# Pycharm configuration -> Additional Arguments: test base
+
 from django.test import TestCase
 
 

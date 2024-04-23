@@ -1,9 +1,11 @@
+# Pycharm configuration -> Additional Arguments: test users
+
 from django.test import TestCase
 
 
 class TestBase(TestCase):
     all_views = (
-        '//', '//content', '//about', '//contact', '//terms_and_privacy', '//email_was_sent'
+        '//', '//content', '//about', '//contact', '//terms_and_privacy', '//email_was_sent', '//page_not_found'
     )
 
     def test_all_views(self):

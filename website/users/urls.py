@@ -1,6 +1,7 @@
 from . import views
 from django.urls import path
 from django.contrib.auth.views import LogoutView
+from django.views.decorators.cache import cache_page
 
 app_name = 'users'
 
@@ -8,10 +9,10 @@ urlpatterns = [
     path('login/', views.UserLogin.as_view(), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
     path('registration/', views.UserRegistration.as_view(), name='registration'),
-    path('add_post/', views.AddPost.as_view(), name='add_post'),
-    path('edit/<slug:slug>/', views.UpdatePost.as_view(), name='edit'),
+    path('add_post/', cache_page(60)(views.AddPost.as_view()), name='add_post'),
+    path('edit/<slug:slug>/', cache_page(60)(views.UpdatePost.as_view()), name='edit'),
     path('delete/<slug:slug>/', views.DeletePost.as_view(), name='delete'),
-    path('profile/', views.UserProfile.as_view(), name='profile'),
+    path('profile/', cache_page(60)(views.UserProfile.as_view()), name='profile'),
     path('password_change/', views.UserPasswordChange.as_view(), name='password_change'),
     path('back_to_profile/done/', views.UserPasswordChangeDone.as_view(), name='back_to_profile'),
     path('password_reset/', views.UserPasswordReset.as_view(), name='password_reset'),
