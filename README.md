@@ -28,7 +28,7 @@ gunicorn website.wsgi -b 0.0.0.0:8001
 
 ## Deploy on PythonAnywhere
 
-1) Consoles
+Console-page
 
 ```console
 
@@ -41,7 +41,7 @@ gunicorn website.wsgi -b 0.0.0.0:8001
 
 ```
 
-2) Web
+Web-page
 
 Virualenv: venv
 
@@ -56,7 +56,7 @@ Static files:
 /media/
 /home/Kepler54/DjangoSite/website/media/
 
-3) WSGI configuration file:
+WSGI configuration file:
 
 ```code
 
@@ -75,7 +75,7 @@ application = get_wsgi_application()
 
 ```
 
-4) Files
+Files-page
 
 ALLOWED_HOSTS = ['*']
 
