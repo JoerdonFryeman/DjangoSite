@@ -80,4 +80,4 @@ Files-page
 ALLOWED_HOSTS = ['*']
 
 /home/Kepler54/DjangoSite/website/website/urls.py
-# path('__debug__/', include('debug_toolbar.urls'))
+comment this line: path('__debug__/', include('debug_toolbar.urls'))
