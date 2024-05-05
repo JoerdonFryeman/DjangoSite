@@ -31,11 +31,9 @@ gunicorn website.wsgi -b 0.0.0.0:8001
 Bash console
 
 ```console
-
 pwd
 git clone https://github.com/Kepler54/DjangoSite
 mkvirtualenv --python=/usr/bin/python3.10 venv
-
 ```
 
 Files
@@ -57,11 +55,9 @@ MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware', ]
 Bash console
 
 ```console
-
 pip install -r /home/Kepler54/DjangoSite/website/requirements_prod.txt
 cd /home/Kepler54/DjangoSite/website/ && python3 manage.py collectstatic
 gunicorn website.wsgi -b 0.0.0.0:8001
-
 ```
 
 Web-page
@@ -81,7 +77,6 @@ Static files:
 WSGI configuration file:
 
 ```code
-
 import os
 import sys
 
@@ -94,5 +89,4 @@ os.environ['DJANGO_SETTINGS_MODULE'] = 'website.settings.prod'
 
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
-
 ```
