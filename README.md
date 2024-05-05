@@ -28,25 +28,47 @@ gunicorn website.wsgi -b 0.0.0.0:8001
 
 ## Deploy on PythonAnywhere
 
-Console-page
+Bash console
 
 ```console
 
 pwd
 git clone https://github.com/Kepler54/DjangoSite
 mkvirtualenv --python=/usr/bin/python3.10 venv
-pip install -r requirements_prod.txt
-python3 manage.py collectstatic
+
+```
+
+Files
+
+/home/Kepler54/DjangoSite/website/website/urls.py -> comment this line:
+
+from website.settings import dev
+path('__debug__/', include('debug_toolbar.urls'))
+if dev.DEBUG:
+    urlpatterns += static(dev.MEDIA_URL, document_root=dev.MEDIA_ROOT)
+
+home/Kepler54/DjangoSite/website/website/settings/dev.py -> comment this line:
+
+INSTALLED_APPS += ['debug_toolbar', ]
+MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware', ]
+
+/home/Kepler54/DjangoSite/website/website/settings/prod.py -> your website address: ALLOWED_HOSTS = ['*']
+
+Bash console
+
+```console
+
+pip install -r /home/Kepler54/DjangoSite/website/requirements_prod.txt
+cd /home/Kepler54/DjangoSite/website/ && python3 manage.py collectstatic
 gunicorn website.wsgi -b 0.0.0.0:8001
 
 ```
 
 Web-page
 
-Virualenv: venv
-
 Source code: /home/Kepler54/DjangoSite/website/manage.py
 Working directory: /home/Kepler54/DjangoSite/website/
+Virualenv: venv
 
 Static files:
 
@@ -74,10 +96,3 @@ from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
 
 ```
-
-Files-page
-
-ALLOWED_HOSTS = ['*']
-
-/home/Kepler54/DjangoSite/website/website/urls.py
-comment this line: path('__debug__/', include('debug_toolbar.urls'))
