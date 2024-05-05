@@ -29,7 +29,6 @@ padding: 0px 0px 0px 0px;
 .body {
 box-sizing: border-box;
 height: 100%;
-padding: 0px 0px 0px 100px;
 }
 .categories {
 display: inline-block;
@@ -42,8 +41,6 @@ display: inline-block;
 overflow-x: hidden;
 overflow-y: auto;
 background: rgba(204, 204, 204, 0.05);
-max-width: 1385px;
-min-width: 1385px;
 }
 @media screen and (min-width: 1765px) {
     .categories {
@@ -53,16 +50,26 @@ min-width: 1385px;
     }
     .content {
     height: 100%;
+    max-width: 1385px;
+    min-width: 1385px;
+    }
+    .body {
+        padding: 0px 0px 0px 100px;
     }
 }
 @media screen and (max-width: 1764px) {
     .categories {
-    max-width: 1385px;
-    min-width: 1385px;
-    height: 30%;
+    height: 25%;
+    max-width: 100%;
+    min-width: 100%;
     }
     .content {
-    height: 70%;
+    height: 75%;
+    max-width: 100%;
+    min-width: 100%;
+    }
+    .body {
+        padding: 0px;
     }
 }
 .shell {
