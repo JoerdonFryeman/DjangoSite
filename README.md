@@ -59,7 +59,7 @@ pip install -r /home/Kepler54/DjangoSite/website/requirements_prod.txt
 cd /home/Kepler54/DjangoSite/website/
 cp .env.template .env
 python3 manage.py collectstatic
-cd ~ && gunicorn website.wsgi -b 0.0.0.0:8001
+gunicorn website.wsgi -b 0.0.0.0:8001
 ```
 
 Web-page
