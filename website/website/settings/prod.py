@@ -1,7 +1,7 @@
 from .base import *
-from os import environ, path
+from os import getenv, path
 
-SECRET_KEY = str(environ.get('SECRET_KEY'))
+SECRET_KEY = str(getenv('SECRET_KEY'))
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']
@@ -16,8 +16,8 @@ DATABASES = {
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = ''
 EMAIL_PORT = 587
-EMAIL_HOST_USER = str(environ.get('EMAIL_HOST_USER'))
-EMAIL_HOST_PASSWORD = str(environ.get('EMAIL_HOST_PASSWORD'))
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 SERVER_EMAIL = EMAIL_HOST_USER
