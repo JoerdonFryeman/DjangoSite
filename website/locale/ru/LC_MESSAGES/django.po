@@ -291,8 +291,8 @@ msgid "Forgot your password?"
 msgstr "Забыли пароль?"
 
 #: users/templates/users/password_change_form.html:13
-msgid "Change password"
-msgstr "Изменить пароль"
+msgid "Change"
+msgstr "Изменить"
 
 #: users/templates/users/password_reset_confirm.html:13
 #: users/templates/users/profile.html:21
@@ -324,7 +324,7 @@ msgid "Reset password"
 msgstr "Сброс пароля"
 
 #: users/templates/users/profile.html:24
-msgid "Change password: "
+msgid "Change password"
 msgstr "Изменить пароль"
 
 #: users/views.py:16
