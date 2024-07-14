@@ -7,7 +7,6 @@ Example of a simple Django website
 Run the following commands to bootstrap your environment
 
 ```console
-sudo apt-get install python3-venv python3-pip
 git clone https://github.com/Kepler54/DjangoSite
 cd DjangoSite
 
