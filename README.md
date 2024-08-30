@@ -1,8 +1,6 @@
 # Website template
 
-Example of a simple Django website
-
-## Quickstart
+### Example of a simple Django website
 
 Run the following commands to bootstrap your environment
 
@@ -25,7 +23,7 @@ Run the app with gunicorn:
 
 gunicorn website.wsgi -b 0.0.0.0:8001
 
-## Deploy on PythonAnywhere
+### Deploy on PythonAnywhere
 
 Bash console
 
@@ -98,3 +96,5 @@ os.environ['DJANGO_SETTINGS_MODULE'] = 'website.settings.prod'
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
 ```
+### Support with Bitcoin
+bc1qewfgtrrg2gqgtvzl5d2pr9pte685pp5n3g6scy
