@@ -2,7 +2,7 @@
 ### Example of a simple Django website
 Run the following commands to bootstrap your environment
 ```console
-git clone https://github.com/Kepler54/DjangoSite
+git clone https://github.com/KeplerCoder/DjangoSite
 cd DjangoSite
 
 python3 -m venv dvenv
@@ -19,11 +19,11 @@ gunicorn website.wsgi -b 0.0.0.0:8001
 Bash console
 ```shell
 pwd
-git clone https://github.com/Kepler54/DjangoSite
+git clone https://github.com/KeplerCoder/DjangoSite
 mkvirtualenv --python=/usr/bin/python3.10 venv
 ```
 Files
-/home/Kepler54/DjangoSite/website/website/urls.py -> comment this line:
+/home/KeplerCoder/DjangoSite/website/website/urls.py -> comment this line:
 ```
 # from website.settings import dev
 
@@ -32,42 +32,42 @@ Files
 # if dev.DEBUG:
 # 	urlpatterns += static(dev.MEDIA_URL, document_root=dev.MEDIA_ROOT)
 ```
-home/Kepler54/DjangoSite/website/website/settings/dev.py -> comment this line:
+home/KeplerCoder/DjangoSite/website/website/settings/dev.py -> comment this line:
 ```
 # INSTALLED_APPS += ['debug_toolbar', ]
 # MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware', ]
 ```
-/home/Kepler54/DjangoSite/website/website/settings/prod.py -> your website
+/home/KeplerCoder/DjangoSite/website/website/settings/prod.py -> your website
 ```shell
  address: ALLOWED_HOSTS = ['*']
 ```
 Bash console
 ```shell
-pip install -r /home/Kepler54/DjangoSite/website/requirements_prod.txt
-cd /home/Kepler54/DjangoSite/website/
+pip install -r /home/KeplerCoder/DjangoSite/website/requirements_prod.txt
+cd /home/KeplerCoder/DjangoSite/website/
 cp .env.template .env
 python3 manage.py collectstatic
 ```
 Web-page
 
-Source code: /home/Kepler54/DjangoSite/website/manage.py
+Source code: /home/KeplerCoder/DjangoSite/website/manage.py
 
-Working directory: /home/Kepler54/DjangoSite/website/
+Working directory: /home/KeplerCoder/DjangoSite/website/
 
 Virualenv: venv
 
 Static files:
 
-/static/ /home/Kepler54/DjangoSite/website/static/
+/static/ /home/KeplerCoder/DjangoSite/website/static/
 
-/media/ /home/Kepler54/DjangoSite/website/media/
+/media/ /home/KeplerCoder/DjangoSite/website/media/
 
 WSGI configuration file:
 ```
 import os
 import sys
 
-path = '/home/Kepler54/DjangoSite/website/website'
+path = '/home/KeplerCoder/DjangoSite/website/website'
 
 if path not in sys.path:
     sys.path.append(path)
