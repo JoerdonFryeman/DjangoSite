@@ -166,7 +166,7 @@ msgstr "Свяжитесь с нами"
 
 #: base/views.py:67
 msgid "Support with Bitcoin: bc1qewfgtrrg2gqgtvzl5d2pr9pte685pp5n3g6scy"
-msgstr "Поддержать с помощью Биткоина: bc1qewfgtrrg2gqgtvzl5d2pr9pte685pp5n3g6scy"
+msgstr "Поддержать с помощью биткоина: bc1qewfgtrrg2gqgtvzl5d2pr9pte685pp5n3g6scy"
 
 #: base/views.py:82
 msgid "Terms"
