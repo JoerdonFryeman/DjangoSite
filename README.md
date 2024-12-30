@@ -2,7 +2,7 @@
 ### Example of a simple Django website
 Run the following commands to bootstrap your environment
 ```console
-git clone https://github.com/JoerdenFryeman/DjangoSite.git
+git clone https://github.com/JoerdonFryeman/DjangoSite.git
 cd DjangoSite
 
 python3 -m venv dvenv
@@ -19,11 +19,11 @@ gunicorn website.wsgi -b 0.0.0.0:8001
 Bash console
 ```console
 pwd
-git clone https://github.com/JoerdenFryeman/DjangoSite.git
+git clone https://github.com/JoerdonFryeman/DjangoSite.git
 mkvirtualenv --python=/usr/bin/python3.10 venv
 ```
 Files
-/home/JoerdenFryeman/DjangoSite/website/website/urls.py -> comment this line:
+/home/JoerdonFryeman/DjangoSite/website/website/urls.py -> comment this line:
 ```python
 # from website.settings import dev
 
@@ -32,42 +32,42 @@ Files
 # if dev.DEBUG:
 # 	urlpatterns += static(dev.MEDIA_URL, document_root=dev.MEDIA_ROOT)
 ```
-home/JoerdenFryeman/DjangoSite/website/website/settings/dev.py -> comment this line:
+home/JoerdonFryeman/DjangoSite/website/website/settings/dev.py -> comment this line:
 ```python
 # INSTALLED_APPS += ['debug_toolbar', ]
 # MIDDLEWARE += ['debug_toolbar.middleware.DebugToolbarMiddleware', ]
 ```
-/home/JoerdenFryeman/DjangoSite/website/website/settings/prod.py -> your website
+/home/JoerdonFryeman/DjangoSite/website/website/settings/prod.py -> your website
 ```python
 address: ALLOWED_HOSTS = ['*']
 ```
 Bash console
 ```console
-pip install -r /home/JoerdenFryeman/DjangoSite/website/requirements_prod.txt
-cd /home/JoerdenFryeman/DjangoSite/website/
+pip install -r /home/JoerdonFryeman/DjangoSite/website/requirements_prod.txt
+cd /home/JoerdonFryeman/DjangoSite/website/
 cp .env.template .env
 python3 manage.py collectstatic
 ```
 Web-page
 
-Source code: /home/JoerdenFryeman/DjangoSite/website/manage.py
+Source code: /home/JoerdonFryeman/DjangoSite/website/manage.py
 
-Working directory: /home/JoerdenFryeman/DjangoSite/website/
+Working directory: /home/JoerdonFryeman/DjangoSite/website/
 
 Virualenv: venv
 
 Static files:
 
-/static/ /home/JoerdenFryeman/DjangoSite/website/static/
+/static/ /home/JoerdonFryeman/DjangoSite/website/static/
 
-/media/ /home/JoerdenFryeman/DjangoSite/website/media/
+/media/ /home/JoerdonFryeman/DjangoSite/website/media/
 
 WSGI configuration file:
 ```python
 import os
 import sys
 
-path = '/home/JoerdenFryeman/DjangoSite/website/website'
+path = '/home/JoerdonFryeman/DjangoSite/website/website'
 
 if path not in sys.path:
     sys.path.append(path)
