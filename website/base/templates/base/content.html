@@ -2,19 +2,37 @@
 {% load i18n %}
 
 {% block content %}
-{% if content.photo %}
-<img src="{{photo.url}}" alt="{{header}}"><br>
-{% else %}
-<p align="center">{% include 'base/inclusions/image_icon.html' %}</p><br>
-{% endif %}
-<br>{{post|linebreaks}}<br>
-{% trans 'Author: ' %}{{author|default:"Unknown"}} | {% trans 'Date: ' %}{{time_update|date:"d-m-Y H:i:s"}}
-<br><br>
-{% if perms.users.change_users %}
-<a class="link-dark" href="{% url 'users:edit' slug %}">{% trans 'Edit article' %}</a><br>
-{% endif %}
-{% if perms.users.delete_users %}
-<br><a class="link-dark" href="{% url 'users:delete' slug %}">{% trans 'Delete article' %}</a><br>
-<br>
-{% endif %}
+<div class="content-shell">
+
+    <h1 class="post">{{page_header}}</h1>
+
+    <div class="image-text-wrapper">
+        <section class="image-content-container">
+            {% if content.photo %}
+            <img src="{{photo.url}}" alt="{{header}}">
+            {% else %}
+            {% include 'base/inclusions/image_icon.html' %}
+            {% endif %}
+        </section>
+
+        <div class="text-button-wrapper">
+            <article class="text-container">
+                {{post|linebreaks}}
+            </article>
+
+            <article>
+                {% trans 'Author: ' %}{{author|default:"Unknown"}} | {% trans 'Date: ' %}{{time_update|date:"d-m-Y H:i:s"}}
+            </article>
+
+            <section class="button-wrapper">
+                {% if perms.users.change_users %}
+                <a class="link-dark" href="{% url 'users:edit' slug %}">{% trans 'Edit article' %}</a>
+                {% endif %}
+                {% if perms.users.delete_users %}
+                <a class="link-dark" href="{% url 'users:delete' slug %}">{% trans 'Delete article' %}</a>
+                {% endif %}
+            </section>
+        </div>
+    </div>
+</div>
 {% endblock %}

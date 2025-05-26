@@ -2,58 +2,58 @@
 {% load i18n %}
 
 {% block content %}
+<div class="content-shell">
 
-<!-- Посты -->
-{% for i in post %}
+    <h1 class="post">{{ page_header }}</h1>
 
-<!-- Изображение -->
-{% if i.photo %}
-<a href='{{i.get_absolute_url}}'>
-    <img align="left" src="{{i.photo.url}}" height="165" hspace="15" alt="{{i.header}}">
-</a>
-{% else %}
-<a class="link-dark" href="{{i.get_absolute_url}}">
-    {% include 'base/inclusions/image_icon.html' %}
-</a>
-{% endif %}
+    <div class="image-text-wrapper">
+        {% for i in post %}
+        {% if i.photo %}
+        <a href='{{i.get_absolute_url}}'><img class="image-container" src="{{i.photo.url}}" alt="{{i.header}}"></a>
+        {% else %}
+        <a class="link-dark" href="{{i.get_absolute_url}}">{% include 'base/inclusions/image_icon.html' %}</a>
+        {% endif %}
 
-<!-- Заголовок поста -->
-{{i.header}}
-{% if i.category.cat_name != None %}
-<p>{{i.category.cat_name}}</p>
-{% else %}
-<p>{% trans 'Star' %}</p>
-{% endif %}
+        <div class="text-button-wrapper">
+            <h4>
+                <a class="post-third" href="{{i.get_absolute_url}}">{{i.header}}</a>
+            </h4>
+            <section class="post-third">
+                {% if i.category.cat_name != None %}
+                {{i.category.cat_name}}
+                {% else %}
+                {% trans 'Star' %}
+                {% endif %}
+            </section>
 
-<!-- Текст поста с фильтрами -->
-{% autoescape off %}
-{{i.post|linebreaks|truncatewords:30}}
-{% endautoescape %}
+            <article class="text-container">
+                {% autoescape off %}
+                {{i.post|linebreaks|truncatewords:80}}
+                {% endautoescape %}
+            </article>
 
-<!-- Ссылка на пост -->
-<p align="right">
-    <a class="link-dark" href="{{i.get_absolute_url}}">{% include 'base/inclusions/eyeglasses_icon.html' %}</a>
-</p><br>
-{% if not forloop.last %}
-<hr class="line"><br>
-{% endif %}
+        </div>
+        {% if not forloop.last %}
+        <hr class="line">
+        {% endif %}
+        {% endfor %}
 
-{% endfor %}
-{% endblock %}
+    </div>
 
-<!-- Блок навигации -->
+</div>
+
 {% block navigation %}
 <div class="navigation">
     {% if page_obj.has_other_pages %}
     {% if page_obj.has_previous %}
     <a class="link-dark" href="?page={{page_obj.previous_page_number}}">
-        {% include 'base/inclusions/caret_left_icon.html' %}&nbsp;
+        {% include 'base/inclusions/caret_left_icon.html' %}
     </a>
     {% endif %}
 
     {% for i in page_obj.paginator.page_range %}
     {% if page_obj.number == i %}
-    <a>{{i}}</a>
+    <a class="navigation-active">{{i}}</a>
     {% elif i >= page_obj.number|add:-2 and i <= page_obj.number|add:2 %}
     <a class="link-dark" href="?page={{i}}">{{i}}</a>
     {% endif %}
@@ -61,9 +61,11 @@
 
     {% if page_obj.has_next %}
     <a class="link-dark" href="?page={{page_obj.next_page_number}}">
-        &nbsp;{% include 'base/inclusions/caret_right_icon.html' %}
+        {% include 'base/inclusions/caret_right_icon.html' %}
     </a>
     {% endif %}
     {% endif %}
-</div><br>
+</div>
+{% endblock %}
+
 {% endblock %}

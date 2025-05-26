@@ -1,7 +1,12 @@
+import environ
 from pathlib import Path
 from django.utils.translation import gettext_lazy as _
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
+env = environ.Env()
+environ.Env.read_env(BASE_DIR / '.env')
+SECRET_KEY = env('SECRET_KEY')
 
 INSTALLED_APPS = [
     'modeltranslation',
@@ -66,12 +71,16 @@ LANGUAGE_CODE = 'ru'
 
 TIME_ZONE = 'UTC'
 
+CSRF_COOKIE_SECURE = True
+CSRF_COOKIE_HTTPONLY = True
+SESSION_COOKIE_SECURE = True
+
 USE_I18N = True
 
 USE_TZ = True
 
 LANGUAGES = [
-    ('ru', _('Russia')),
+    ('ru', _('Russian')),
     ('en', _('English')),
 ]
 

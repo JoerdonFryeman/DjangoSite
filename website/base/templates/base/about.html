@@ -1,14 +1,29 @@
 {% extends 'base.html' %}
+{% load i18n %}
 
 {% block content %}
-<div class="centre-text">
-    <a class="link-dark" href='https://github.com/JoerdonFryeman/DjangoSite' target="_blank">
-        {% include 'base/inclusions/GitHub_icon.html' %}
-    </a>
-</div>
-<div>
-    <a class="link-dark" style="text-align: center" href='https://github.com/JoerdonFryeman/DjangoSite' target="_blank">
-        <br>{{page_post|linebreaks}}
-    </a>
+<div class="content-shell">
+
+    <section>
+        <!-- <h1 class="post">{% trans 'About the website' %}</h1> -->
+
+        <h1 class="post">{{ page_header }}</h1>
+
+        <div class="image-text-wrapper">
+
+            <!-- <img class="image-container" src="{{ photo.url }}" alt="Изображение"> -->
+
+            <article class="text-container">
+                {% include 'base/inclusions/telescope.html' %}
+                {% trans 'An example of a website on Django' %}
+
+                <!-- {% autoescape off %} -->
+                <!-- {{ content }} -->
+                <!-- {% endautoescape %} -->
+            </article>
+
+        </div>
+    </section>
+
 </div>
 {% endblock %}

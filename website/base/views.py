@@ -82,7 +82,7 @@ class ContactPage(FormView):
 
 
 class TermsPage(TemplateView):
-    template_name = 'base/terms_and_privacy.html'
+    template_name = 'base/terms.html'
     extra_context = {
         'title': _('Terms'),
         'page_header': _('Terms of Use'),
@@ -91,7 +91,7 @@ class TermsPage(TemplateView):
 
 
 class PrivacyPage(TemplateView):
-    template_name = 'base/terms_and_privacy.html'
+    template_name = 'base/privacy.html'
     extra_context = {
         'title': _('Privacy'),
         'page_header': _('Privacy & Security'),

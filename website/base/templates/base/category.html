@@ -1,7 +1,9 @@
-{% for i in category %}
-{% if i.id == selected %}
-<ul><a>{{i.cat_name}}</a></ul>
-{% else %}
-<ul><a class="link-dark" href="{{i.get_absolute_url}}">{{i.cat_name}}</a></ul>
-{% endif %}
-{% endfor %}
+<section>
+    {% for i in category %}
+    {% if i.id == selected %}
+    <a class="link-dark">{{ i.cat_name }}</a>
+    {% else %}
+    <a class="link-dark" href="{{ i.get_absolute_url }}">{{ i.cat_name }}</a>
+    {% endif %}
+    {% endfor %}
+</section>

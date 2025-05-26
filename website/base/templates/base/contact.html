@@ -1,19 +1,46 @@
 {% extends 'base.html' %}
+
+{% load static %}
 {% load i18n %}
 
 {% block content %}
-<form method="POST">
-    {% csrf_token %}
-    <div class="error-form">{{form.non_field_errors}}</div>
-    {% for f in form %}
-    <label class="label-form" for="{{f.id_for_label}}">{{f.label}}:</label>{{f}}
-    <div class="error-form">{{f.errors}}</div>
-    {% endfor %}
-    <input class="button" type="submit" value="{% trans 'Send' %}">
-</form>
-<br><h2>{% trans 'Links' %}</h2>
-<a class="link-dark" href='https://github.com/JoerdonFryeman/DjangoSite' target="_blank">
-    {% include 'base/inclusions/eyeglasses_icon.html' %}&nbsp;
-</a>
-<br><p>{{page_post|linebreaks}}</p>
+<div class="form-shell">
+
+    <section>
+        <h1 class="post">{{ post }}</h1>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="error-form">{{ form.non_field_errors }}</div>
+            {% for f in form %}
+            <label class="label-form" for="{{ f.id_for_label }}">{{ f.label }}:</label>
+            {{ f }}
+            <div class="error-form">{{ f.errors }}</div>
+            {% endfor %}
+            <section class="button-wrapper">
+                <input class="button" type="submit" value="{% trans 'Send' %}">
+                <div id="notification" class="notification" style="display: none;"></div>
+            </section>
+        </form>
+    </section>
+
+    <section>
+        <h2 class="post-second">{% trans 'Links' %}</h2>
+        <a class="link-dark" href='https://github.com/JoerdonFryeman' target="_blank"  rel="noopener noreferrer" title="{% trans 'GitHub' %}">
+            {% include 'base/inclusions/github_icon.html' %}
+        </a>
+        <a class="link-dark" onclick="copyToClipboard('https://klimenkov.pythonanywhere.com')" title="{% trans 'Share' %}">
+        {% include 'base/inclusions/share_icon.html' %}
+        </a>
+    </section>
+
+    <section>
+        <h3 class="post-third">{% trans 'You can support our project with Bitcoin or PayPal' %}</h3>
+        <a class="link-dark" onclick="copyToClipboard('bc1qewfgtrrg2gqgtvzl5d2pr9pte685pp5n3g6scy')" title="{% trans 'Support with Bitcoin' %}">
+        {% include 'base/inclusions/bitcoin_icon.html' %}
+        </a>
+    </section>
+
+</div>
+
+<script src="{% static 'base/js/notification_script.js' %}"></script>
 {% endblock %}

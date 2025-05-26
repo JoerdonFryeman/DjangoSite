@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block content %}
+<div class="content-shell">
+
+    <section>
+        <h1 class="post">{{ page_header }}</h1>
+
+        <article class="text-container">
+            {% include 'base/inclusions/telescope.html' %}
+            {% trans 'Your Terms of Use' %}
+
+            <!-- {% autoescape off %} -->
+            <!-- {{ content|linebreaks }} -->
+            <!-- {% endautoescape %} -->
+        </article>
+
+    </section>
+
+</div>
+{% endblock %}
