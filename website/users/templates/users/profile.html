@@ -19,13 +19,12 @@
         <div class="error-form">{{i.errors}}</div>
         {% endfor %}
         <section class="button-wrapper">
+            <a class="link-dark" href="{% url 'users:password_change' %}">{% trans 'Change password' %}</a>
+        </section>
+        <section class="button-wrapper">
             <button class="button" type="submit">{% trans 'Save' %}</button>
         </section>
     </form>
 
 </div>
-
-<section>
-    <a class="link-dark" href="{% url 'users:password_change' %}">{% trans 'Change password: ' %}</a>
-</section>
 {% endblock %}

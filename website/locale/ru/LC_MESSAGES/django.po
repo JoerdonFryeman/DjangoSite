@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-05-26 15:54+0000\n"
+"POT-Creation-Date: 2025-05-27 13:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -85,7 +85,7 @@ msgstr "Статус"
 
 #: website/base/models.py:37
 msgid "object"
-msgstr "оъект"
+msgstr "объект"
 
 #: website/base/models.py:38
 msgid "Objects"
@@ -107,28 +107,28 @@ msgstr "О сайте"
 msgid "An example of a website on Django"
 msgstr "Пример веб-сайта на Django"
 
-#: website/base/templates/base/contact.html:20
-#: website/users/templates/users/add_post.html:13
+#: website/base/templates/base/contact.html:19
+#: website/users/templates/users/add_post.html:15
 msgid "Send"
 msgstr "Отправить"
 
-#: website/base/templates/base/contact.html:27
+#: website/base/templates/base/contact.html:26
 msgid "Links"
 msgstr "Ссылки"
 
-#: website/base/templates/base/contact.html:28
+#: website/base/templates/base/contact.html:27
 msgid "GitHub"
 msgstr "GitHub"
 
-#: website/base/templates/base/contact.html:31
+#: website/base/templates/base/contact.html:30
 msgid "Share"
 msgstr "Поделиться"
 
-#: website/base/templates/base/contact.html:37
+#: website/base/templates/base/contact.html:36
 msgid "You can support our project with Bitcoin or PayPal"
 msgstr "Вы можете поддержать наш проект с помощью Биткоина или PayPal"
 
-#: website/base/templates/base/contact.html:38
+#: website/base/templates/base/contact.html:37
 msgid "Support with Bitcoin"
 msgstr "Поддержать с помощью Биткоина"
 
@@ -155,6 +155,7 @@ msgstr "При отправке сообщения произошла ошибк
 #: website/base/templates/base/email_was_not_sent.html:12
 #: website/base/templates/base/email_was_sent.html:12
 #: website/base/templates/base/error_404.html:12
+#: website/users/templates/users/password_reset_done.html:13
 msgid "Back to home page"
 msgstr "Вернуться на главную страницу"
 
@@ -170,15 +171,13 @@ msgstr "Страница не найдена! Ошибка 404..."
 msgid "Star"
 msgstr "Звезда"
 
-#: website/base/templates/base/privacy.html:12 website/base/views.py:97
-#: website/templates/base.html:76
-msgid "Privacy & Security"
-msgstr "Политика конфиденциальности"
+#: website/base/templates/base/privacy.html:12 website/base/views.py:98
+msgid "Your privacy policy"
+msgstr "Ваша политика конфиденциальности"
 
-#: website/base/templates/base/terms.html:12 website/base/views.py:88
-#: website/templates/base.html:74
-msgid "Terms of Use"
-msgstr "Пользовательское соглашение"
+#: website/base/templates/base/terms.html:12 website/base/views.py:89
+msgid "Your Terms of Use"
+msgstr "Ваше пользовательское соглашение"
 
 #: website/base/views.py:14 website/templates/base.html:78
 msgid "Space"
@@ -202,7 +201,7 @@ msgstr "Контакты"
 
 #: website/base/views.py:71
 msgid "Contact us"
-msgstr "Свяжитесь с нами"
+msgstr "Связаться с нами"
 
 #: website/base/views.py:72
 msgid "Support with Bitcoin: bc1qewfgtrrg2gqgtvzl5d2pr9pte685pp5n3g6scy"
@@ -212,17 +211,17 @@ msgstr "Поддержать с помощью Биткоина: bc1qewfgtrrg2gq
 msgid "Terms"
 msgstr "Условия"
 
-#: website/base/views.py:89
-msgid "Your Terms of Use"
-msgstr "Ваше пользовательское соглашение"
+#: website/base/views.py:88 website/templates/base.html:74
+msgid "Terms of Use"
+msgstr "Пользовательское соглашение"
 
 #: website/base/views.py:96
 msgid "Privacy"
 msgstr "Конфиденциальность"
 
-#: website/base/views.py:98
-msgid "Your privacy policy"
-msgstr "Ваша политика конфиденциальности"
+#: website/base/views.py:97 website/templates/base.html:76
+msgid "Privacy & Security"
+msgstr "Политика конфиденциальности"
 
 #: website/base/views.py:105 website/base/views.py:106
 msgid "Successfully sent!"
@@ -240,13 +239,13 @@ msgstr "Добавить статью"
 msgid "Logout"
 msgstr "Выход"
 
-#: website/templates/base.html:38 website/users/templates/users/login.html:14
+#: website/templates/base.html:38 website/users/templates/users/login.html:16
 #: website/users/views.py:15
 msgid "Login"
 msgstr "Вход"
 
 #: website/templates/base.html:41
-#: website/users/templates/users/registration.html:13 website/users/views.py:21
+#: website/users/templates/users/registration.html:15 website/users/views.py:21
 msgid "Registration"
 msgstr "Регистрация"
 
@@ -302,75 +301,72 @@ msgstr "Фамилия"
 msgid "Date of birth"
 msgstr "Дата рождения"
 
-#: website/users/templates/users/back_to_profile.html:5
-#: website/users/templates/users/password_reset_complete.html:5
+#: website/users/templates/users/back_to_profile.html:8
+#: website/users/templates/users/password_reset_complete.html:8
 msgid "Back to profile"
 msgstr "Назад к профилю"
 
-#: website/users/templates/users/delete.html:7
+#: website/users/templates/users/delete.html:9
 msgid "Do you really want to delete this article?"
 msgstr "Вы действительно хотите удалить эту статью?"
 
-#: website/users/templates/users/delete.html:8
+#: website/users/templates/users/delete.html:11
 msgid "Delete"
 msgstr "Удалить"
 
-#: website/users/templates/users/login.html:16
+#: website/users/templates/users/login.html:19
 msgid "Forgot your password?"
 msgstr "Забыли пароль?"
 
-#: website/users/templates/users/password_change_form.html:13
+#: website/users/templates/users/password_change_form.html:15
+#: website/users/templates/users/profile.html:22
 msgid "Change password"
-msgstr "Изменить"
+msgstr "Изменить пароль"
 
-#: website/users/templates/users/password_reset_confirm.html:13
-#: website/users/templates/users/profile.html:21
+#: website/users/templates/users/password_reset_confirm.html:15
+#: website/users/templates/users/profile.html:25
 msgid "Save"
 msgstr "Сохранить"
 
-#: website/users/templates/users/password_reset_done.html:5
+#: website/users/templates/users/password_reset_done.html:7
 msgid ""
 "We’ve emailed you instructions for setting your password, if an account "
 "exists with the email you entered. You should receive them shortly."
 msgstr "Мы отправили вам инструкции по установке пароля, если учетная запись с указанным вами электронным адресом существует. Вы должны получить их в ближайшее время."
 
-#: website/users/templates/users/password_reset_done.html:7
+#: website/users/templates/users/password_reset_done.html:10
 msgid ""
 "If you don’t receive an email, please make sure you’ve entered the address "
 "you registered with, and check your spam folder."
 msgstr "Если вы не получили письмо, убедитесь, что вы ввели адрес, с которого зарегистрировались, и проверьте папку со спамом."
 
-#: website/users/templates/users/password_reset_email.html:2
+#: website/users/templates/users/password_reset_email.html:4
 #, python-format
 msgid ""
 "You're receiving this email because you requested a password reset for your "
 "user account at %(site_name)s%."
 msgstr "Аккаунт пользователя %(site_name)%"
 
-#: website/users/templates/users/password_reset_email.html:4
-msgid "Please go to the following page and choose a new password: "
+#: website/users/templates/users/password_reset_email.html:6
+msgid "Please go to the following page and choose a new password:"
 msgstr "Пожалуйста, перейдите на следующую страницу и выберите новый пароль: "
 
-#: website/users/templates/users/password_reset_email.html:8
-msgid "Your username, in case you’ve forgotten: "
+#: website/users/templates/users/password_reset_email.html:10
+msgid "Your username, in case you’ve forgotten:"
 msgstr "Ваше имя пользователя, если вы забыли: "
 
-#: website/users/templates/users/password_reset_email.html:10
+#: website/users/templates/users/password_reset_email.html:12
 msgid "Thanks for using our site!"
 msgstr "Спасибо, что пользуетесь нашим сайтом!"
 
-#: website/users/templates/users/password_reset_email.html:12
+#: website/users/templates/users/password_reset_email.html:14
 #, python-format
 msgid "The %(site_name)s% team"
 msgstr "Команда %(site_name)%"
 
-#: website/users/templates/users/password_reset_form.html:13
+#: website/users/templates/users/password_reset_form.html:15
 msgid "Reset password"
 msgstr "Сброс пароля"
-
-#: website/users/templates/users/profile.html:24
-msgid "Change password: "
-msgstr "Изменить пароль: "
 
 #: website/users/views.py:15
 msgid "Authorization"
