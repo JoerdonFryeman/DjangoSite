@@ -9,6 +9,6 @@ class UploadFiles(models.Model):
 
 class User(AbstractUser):
     photo = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True, null=True, verbose_name=_('Photo'))
-    first_name = models.TextField(blank=True, null=True, verbose_name=_('Name'))
-    last_name = models.TextField(blank=True, null=True, verbose_name=_('Surname'))
+    first_name = models.TextField(blank=True, null=True, verbose_name=_('Name: '))
+    last_name = models.TextField(blank=True, null=True, verbose_name=_('Surname: '))
     date_birth = models.DateTimeField(blank=True, null=True, verbose_name=_('Date of birth'))

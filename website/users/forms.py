@@ -50,6 +50,6 @@ class UserProfileForm(forms.ModelForm):
 
 
 class UserPasswordChangeForm(PasswordChangeForm):
-    old_password = forms.CharField(label=_('Current password'), widget=forms.PasswordInput())
-    new_password1 = forms.CharField(label=_('New password'), widget=forms.PasswordInput())
-    new_password2 = forms.CharField(label=_('Confirm'), widget=forms.PasswordInput())
+    old_password = forms.CharField(label=_('Current password: '), widget=forms.PasswordInput())
+    new_password1 = forms.CharField(label=_('New password: '), widget=forms.PasswordInput())
+    new_password2 = forms.CharField(label=_('Confirm: '), widget=forms.PasswordInput())

@@ -32,8 +32,8 @@ msgid "Site Objects"
 msgstr "Объекты сайта"
 
 #: website/base/forms.py:7 website/users/models.py:12
-msgid "Name"
-msgstr "Имя"
+msgid "Name: "
+msgstr "Имя: "
 
 #: website/base/forms.py:8
 msgid "Email"
@@ -282,20 +282,20 @@ msgid "Date of birth: "
 msgstr "Дата рождения: "
 
 #: website/users/forms.py:53
-msgid "Current password"
-msgstr "Текущий пароль"
+msgid "Current password: "
+msgstr "Текущий пароль: "
 
 #: website/users/forms.py:54
-msgid "New password"
-msgstr "Новый пароль"
+msgid "New password: "
+msgstr "Новый пароль: "
 
 #: website/users/forms.py:55
-msgid "Confirm"
-msgstr "Подтверждение"
+msgid "Confirm: "
+msgstr "Подтверждение: "
 
 #: website/users/models.py:13
-msgid "Surname"
-msgstr "Фамилия"
+msgid "Surname: "
+msgstr "Фамилия: "
 
 #: website/users/models.py:14
 msgid "Date of birth"
