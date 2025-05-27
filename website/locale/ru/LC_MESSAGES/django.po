@@ -172,7 +172,7 @@ msgid "Star"
 msgstr "Звезда"
 
 #: website/base/templates/base/privacy.html:12 website/base/views.py:98
-msgid "Your privacy policy"
+msgid "Your Privacy Policy"
 msgstr "Ваша политика конфиденциальности"
 
 #: website/base/templates/base/terms.html:12 website/base/views.py:89
