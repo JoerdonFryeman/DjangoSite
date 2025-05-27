@@ -19,13 +19,15 @@ gunicorn website.wsgi -b 0.0.0.0:8001
 Bash console
 ```console
 pwd
-git clone https://github.com/JoerdonFryeman/DjangoSite.git
+git clone https://github.com/JoerdonFryeman/DjangoSite
 mkvirtualenv --python=/usr/bin/python3.10 venv
+python3 -m pip install --upgrade pip
 ```
 Files
 /home/JoerdonFryeman/DjangoSite/website/website/urls.py -> comment this line:
 ```python
 # from website.settings import dev
+# from django.conf.urls.static import static
 
 # path('**debug**/', include('debug_toolbar.urls'))
 
