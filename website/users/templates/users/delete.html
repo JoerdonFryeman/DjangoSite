@@ -2,9 +2,15 @@
 {% load i18n %}
 
 {% block content %}
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
-    <p>{% trans 'Do you really want to delete this article?' %}</p><br>
-    <button type="submit">{% trans 'Delete' %}</button>
-</form>
+<div class="form-shell">
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <p>{% trans 'Do you really want to delete this article?' %}</p>
+        <section class="button-wrapper">
+            <button class="button" type="submit">{% trans 'Delete' %}</button>
+        </section>
+    </form>
+
+</div>
 {% endblock %}

@@ -2,17 +2,23 @@
 {% load i18n %}
 
 {% block content %}
-<form method="POST">
-    {% csrf_token %}
-    <input type="hidden" name="next" value="{{next}}">
-    <div class="error-form">{{form.non_field_errors}}</div>
-    {% for i in form %}
-    <label class="label-form" for="{{i.id_for_label}}">{{i.label}}</label>{{i}}
-    <div class="error-form">{{i.errors}}</div>
-    {% endfor %}
-    <br>
-    <button type="submit">{% trans 'Login' %}</button>
-    <br>
-    <br><a class="link-dark" href="{% url 'users:password_reset' %}">{% trans 'Forgot your password?' %}</a>
-</form>
+<div class="form-shell">
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{{next}}">
+        <div class="error-form">{{form.non_field_errors}}</div>
+        {% for i in form %}
+        <label class="label-form" for="{{i.id_for_label}}">{{i.label}}</label>{{i}}
+        <div class="error-form">{{i.errors}}</div>
+        {% endfor %}
+        <section class="button-wrapper">
+            <button class="button" type="submit">{% trans 'Login' %}</button>
+        </section>
+        <section class="button-wrapper">
+            <a class="link-dark" href="{% url 'users:password_reset' %}">{% trans 'Forgot your password?' %}</a>
+        </section>
+    </form>
+
+</div>
 {% endblock %}

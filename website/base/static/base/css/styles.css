@@ -309,6 +309,10 @@ textarea:focus {
     z-index: 1000; /* Уведомление поверх других элементов */
 }
 
+.password-reset {
+    margin-bottom: var(--margin-mini);
+}
+
 /* Адаптивные стили */
 @media screen and (max-width: 1300px) {
     .content {

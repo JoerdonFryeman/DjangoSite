@@ -2,24 +2,30 @@
 {% load i18n %}
 
 {% block content %}
-<br><br>
-<form method="POST" enctype="multipart/form-data">
-    {% csrf_token %}
+<div class="form-shell">
 
-    {% if user.photo %}
-    <img src="{{ user.photo.url }}" height="250" alt="{{user.first_name}}">
-    {% else %}
-    {% include 'base/inclusions/image_icon.html' %}
-    {% endif %}
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
 
-    <div class="error-form">{{form.non_field_errors}}</div>
-    {% for i in form %}
-    <label class="label-form" for="{{i.id_for_label}}">{{i.label}}</label>{{i}}
-    <div class="error-form">{{i.errors}}</div>
-    {% endfor %}
-    <br>
-    <button type="submit">{% trans 'Save' %}</button>
-</form>
-<br>
-<p><a class="link-dark" href="{% url 'users:password_change' %}">{% trans 'Change password: ' %}</a></p>
+        {% if user.photo %}
+        <img src="{{ user.photo.url }}" height="250" alt="{{user.first_name}}">
+        {% else %}
+        {% include 'base/inclusions/image_icon.html' %}
+        {% endif %}
+
+        <div class="error-form">{{form.non_field_errors}}</div>
+        {% for i in form %}
+        <label class="label-form" for="{{i.id_for_label}}">{{i.label}}</label>{{i}}
+        <div class="error-form">{{i.errors}}</div>
+        {% endfor %}
+        <section class="button-wrapper">
+            <button class="button" type="submit">{% trans 'Save' %}</button>
+        </section>
+    </form>
+
+</div>
+
+<section>
+    <a class="link-dark" href="{% url 'users:password_change' %}">{% trans 'Change password: ' %}</a>
+</section>
 {% endblock %}
