@@ -79,5 +79,9 @@ os.environ['DJANGO_SETTINGS_MODULE'] = 'website.settings.prod'
 from django.core.wsgi import get_wsgi_application
 application = get_wsgi_application()
 ```
+
+### License
+This project is being developed under the MIT license.
+
 ### Support with Bitcoin
 bc1qewfgtrrg2gqgtvzl5d2pr9pte685pp5n3g6scy
